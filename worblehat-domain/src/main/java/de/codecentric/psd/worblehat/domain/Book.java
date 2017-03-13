@@ -20,6 +20,7 @@ public class Book implements Serializable {
 	private String edition;
 	private String isbn;
 	private int yearOfPublication;
+	private String summary;
 
 	@OneToOne(mappedBy = "borrowedBook", orphanRemoval = true)
 	private Borrowing borrowing;
@@ -46,13 +47,22 @@ public class Book implements Serializable {
 	 *            the yearOfPublication
 	 */
 	public Book(String title, String author, String edition, String isbn,
-			int yearOfPublication) {
+			int yearOfPublication, String summary) {
 		super();
 		this.title = title;
 		this.author = author;
 		this.edition = edition;
 		this.isbn = isbn;
+
+		this.summary = summary;
 		this.yearOfPublication = yearOfPublication;
+	}
+
+
+	public Book(String title, String author, String edition, String isbn,
+				int yearOfPublication) {
+		this(title,author,edition,isbn,yearOfPublication, "");
+
 	}
 
 	public String getTitle() {
@@ -99,5 +109,15 @@ public class Book implements Serializable {
 
 	public void setBorrowing(Borrowing borrowing) {
 		this.borrowing = borrowing;
+	}
+
+
+	public String getSummary(){
+		return this.summary;
+	}
+
+	public void setSummary(String description){
+		this.summary= description;
+
 	}
 }

@@ -15,11 +15,13 @@ public interface BookService {
 
 	List<Book> findAllBooks();
 
-	Book createBook(String title, String author, String edition, String isbn, int yearOfPublication);
+	Book createBook(String title, String author, String edition, String isbn, int yearOfPublication, String summary);
 
 	boolean bookExists(String isbn);
 
 	void deleteAllBooks();
 
 	void returnSingleBook(Book book);
+
+
 }

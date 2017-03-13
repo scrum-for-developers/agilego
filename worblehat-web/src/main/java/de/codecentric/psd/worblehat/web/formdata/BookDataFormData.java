@@ -29,6 +29,9 @@ public class BookDataFormData {
 	@NotEmpty(message = "{empty.bookDataFormData.author}")
 	private String author;
 
+	@Length(message = "{invalid.length.bookDataFormData.summary}", max = 3000)
+	private String summary;
+
 	public String getYearOfPublication() {
 		return yearOfPublication;
 	}
@@ -69,11 +72,17 @@ public class BookDataFormData {
 		this.edition = edition;
 	}
 
+	public String getSummary() { return this.summary; }
+
+	public void setSummary(String summary) {this.summary = summary; }
+
+
+
 	@Override
 	public String toString() {
 		return "BookDataFormData [title=" + title + ", edition=" + edition
 				+ ", yearOfPublication=" + yearOfPublication + ", isbn=" + isbn + ", author=" + author
-				+ "]";
+                + ", summary=" + summary + "]";
 	}
 
 }

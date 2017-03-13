@@ -82,7 +82,7 @@ public class InsertBookControllerTest {
 
     private void verifyBookIsCreated() {
         verify(bookService).createBook(TEST_BOOK.getTitle(), TEST_BOOK.getAuthor(),
-                TEST_BOOK.getEdition(), TEST_BOOK.getIsbn(), TEST_BOOK.getYearOfPublication());
+                TEST_BOOK.getEdition(), TEST_BOOK.getIsbn(), TEST_BOOK.getYearOfPublication(), TEST_BOOK.getSummary());
     }
 
     private void setupFormData() {
@@ -91,5 +91,6 @@ public class InsertBookControllerTest {
         bookDataFormData.setEdition(TEST_BOOK.getEdition());
         bookDataFormData.setIsbn(TEST_BOOK.getIsbn());
         bookDataFormData.setYearOfPublication(String.valueOf(TEST_BOOK.getYearOfPublication()));
+        bookDataFormData.setSummary(TEST_BOOK.getSummary());
     }
 }

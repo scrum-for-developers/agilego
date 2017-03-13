@@ -21,22 +21,20 @@
 		</tr>
 	</thead>
 	<tbody>
-	<form th:object="${returnSingleBookFormData}" method="POST">
-		<tr th:each="book : ${books}">
-			<td th:text="${book.title}">Harry Potter</td>
-			<td th:text="${book.author}">J.K. Rowling</td>
-			<td th:text="${book.yearOfPublication}">2002</td>
-			<td th:text="${book.edition}">1st</td>
-			<td th:text="${book.isbn}">123456</td>
-			<td th:text="${book.borrowerEmail}">someone@codecentric.de</td>
-			<td>
-				<form th:object="${userBookListFormData}" method="POST">
-				<input id="book" type="hidden" th:field="*{book}" />
-				<input type="submit" id="returnSingleBook" value="Return Book" />
-				</form>
-			</td>
-		</tr>
-	</form>
+	<tr th:each="book : ${books}">
+		<td th:text="${book.title}">Harry Potter</td>
+		<td th:text="${book.author}">J.K. Rowling</td>
+		<td th:text="${book.yearOfPublication}">2002</td>
+		<td th:text="${book.edition}">1st</td>
+		<td th:text="${book.isbn}">123456</td>
+		<td th:text="${book.borrowerEmail}">someone@codecentric.de</td>
+		<td>
+			<form th:object="${singleBookFormData}" method="POST">
+			<input id="book" type="hidden" th:field="*{book}" />
+			<input type="submit" id="returnSingleBook" value="Return Book" />
+			</form>
+		</td>
+	</tr>
 	</tbody>
 	</table>
 	<hr />

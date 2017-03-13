@@ -5,8 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * The domain service class for book operations.
@@ -57,6 +57,15 @@ public class StandardBookService implements BookService {
     @Override
     public List<Book> findAllBooks() {
         return bookRepository.findAllBooks();
+    }
+
+    @Override
+    public List<Book> findBookByBorrowerSortedByDate(String borrower) {
+        return borrowingRepository
+                .findBorrowingsByBorrowerSortedByDate(borrower)
+                .stream()
+                .map(borrwing -> borrwing.getBorrowedBook())
+                .collect(Collectors.toList());
     }
 
 

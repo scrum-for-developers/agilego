@@ -49,4 +49,7 @@ public class Borrowing implements Serializable {
 		// for JPA
 	}
 
+	public Book getBorrowedBook() {
+		return borrowedBook;
+	}
 }

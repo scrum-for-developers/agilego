@@ -30,7 +30,7 @@
 		<td th:text="${book.borrowerEmail}">someone@codecentric.de</td>
 		<td>
 			<form th:object="${singleBookFormData}" method="POST">
-			<input id="book" type="hidden" th:field="*{book}" />
+			<input id="book" type="hidden" th:value="${book.isbn}" />
 			<input type="submit" id="returnSingleBook" value="Return Book" />
 			</form>
 		</td>

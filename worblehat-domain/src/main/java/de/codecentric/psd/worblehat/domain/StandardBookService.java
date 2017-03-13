@@ -78,9 +78,9 @@ public class StandardBookService implements BookService {
     }
 
     @Override
-    public void returnSingleBook(Book book) {
+    public void returnSingleBook(String isbn) {
         Borrowing borrowingsByUser = borrowingRepository
-                .findBorrowingsByIsbn(book);
+                .findBorrowingsByIsbn(isbn);
         borrowingRepository.delete(borrowingsByUser);
     }
 

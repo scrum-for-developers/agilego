@@ -21,5 +21,5 @@ public interface BookService {
 
 	void deleteAllBooks();
 
-    void returnSingleBook(Book book);
+    void returnSingleBook(String isbn);
 }

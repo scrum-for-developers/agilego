@@ -5,9 +5,9 @@
 </head>
 <body>
 	<form th:object="${userBookListData}" method="POST">
-		Email:<input id="email" type="text" th:field="*{email}" />
+		User E-mail:<input id="email" type="text" th:field="*{email}" />
 		<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
-		<input type="submit" id="showBooks" value="Borrow Book" />
+		<input type="submit" id="showBooks" value="Show Books" />
 	</form>
 	<table class="bookList">
 	<thead>

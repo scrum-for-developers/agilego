@@ -22,7 +22,7 @@
   <name>worblehat</name>
 
   <properties>
-    <java.version>1.7</java.version>
+    <java.version>1.8</java.version>
     <psd.dbserver.url>jdbc:mysql://localhost/worblehat</psd.dbserver.url>
     <psd.dbserver.username>worblehat</psd.dbserver.username>
     <psd.dbserver.password>worblehat</psd.dbserver.password>

@@ -43,6 +43,7 @@ public class UserBookListController {
                                 ModelMap modelMap) {
         final List<Book> books = bookService.findBookByBorrowerSortedByDate(userBookListData.getEmail());
         modelMap.addAttribute("books", books);
+        modelMap.addAttribute("userBookListData", userBookListData);
 
         return "userBookList";
     }

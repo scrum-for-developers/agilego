@@ -32,6 +32,9 @@
 			<action dev="marcel.mager" type="update">
 				Updated supported Spring Boot version to 1.3.8.
 			</action>
+			<action dev="julia.seikrit" type="update">
+				Version added
+			</action>
 		</release>
 
 	</body>

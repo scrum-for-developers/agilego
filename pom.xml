@@ -11,13 +11,13 @@
 
   <groupId>de.codecentric.psd</groupId>
   <artifactId>worblehat</artifactId>
-  <version>1.2.0-SNAPSHOT</version>
+  <version>1.2.0</version>
   <packaging>pom</packaging>
 
   <modules>
     <module>worblehat-domain</module>
     <module>worblehat-web</module>
-    <!--module>worblehat-web</module for testing-->
+    <!--<module>worblehat-acceptancetests</module>-->
   </modules>
 
   <name>worblehat</name>

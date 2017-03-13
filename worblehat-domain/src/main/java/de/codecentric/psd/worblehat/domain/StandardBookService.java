@@ -77,5 +77,11 @@ public class StandardBookService implements BookService {
         bookRepository.deleteAll();
     }
 
+    @Override
+    public void returnSingleBook(Book book) {
+        Borrowing borrowingsByUser = borrowingRepository
+                .findBorrowingsByIsbn(book);
+        borrowingRepository.delete(borrowingsByUser);
+    }
 
 }

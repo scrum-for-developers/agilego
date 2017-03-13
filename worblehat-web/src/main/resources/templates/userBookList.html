@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Show all Books</title>
+</head>
+<body>
+	<form th:object="${userBookListData}" method="POST">
+		User E-mail:<input id="email" type="text" th:field="*{email}" />
+		<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+		<input type="submit" id="showBooks" value="Show Books" />
+	</form>
+	<table class="bookList">
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Author</th>
+			<th>Year</th>
+			<th>Edition</th>
+			<th>ISBN</th>
+			<th>Borrower</th>
+		</tr>
+	</thead>
+	<tbody>
+	<form th:object="${returnSingleBookFormData}" method="POST">
+		<tr th:each="book : ${books}">
+			<td th:text="${book.title}">Harry Potter</td>
+			<td th:text="${book.author}">J.K. Rowling</td>
+			<td th:text="${book.yearOfPublication}">2002</td>
+			<td th:text="${book.edition}">1st</td>
+			<td th:text="${book.isbn}">123456</td>
+			<td th:text="${book.borrowerEmail}">someone@codecentric.de</td>
+			<td>
+				<form th:object="${userBookListFormData}" method="POST">
+				<input id="book" type="hidden" th:field="*{book}" />
+				<input type="submit" id="returnSingleBook" value="Return Book" />
+				</form>
+			</td>
+		</tr>
+	</form>
+	</tbody>
+	</table>
+	<hr />
+	<a th:href="@{/}">Back to Home</a>
+</body>
+</html>
